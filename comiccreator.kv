@@ -1,0 +1,49 @@
+# -*- coding: utf-8 -*-
+#:kivy 1.11.0
+# angle_end: 420
+<ComicCreator>: # указали использовать этот класс т.е. я корь и определили местоположение
+    AnchorLayout: # основное расположение кнопок на якоре
+        anchor_x: 'left' # с лева
+        anchor_y: 'top' # в низу
+        ToolBox: # создаем класс и файл делаем по названию класса, тогда киви будет его понимать
+            id: _tool_box # будем писать файл ToolBox чтоб взаимосвязать переменные придуман id
+            # пишется с одним нижним подчеркиванием назвали от балды _tool_box
+# суть языка кивии отображать внутренние переменные которые дают доступ к эллементам внутри языка
+# синтаксис одно нижнее подчеркивание впереди
+            size_hint: None, None # для макетов,  должно быть заполнено поэтому None
+            width: 100 # ширина 100
+# определили главные его параметры id: size_hint: width:
+
+# запускается этот класс <ComicCreator>: т.к мы указали импортировать файл Builder.load_file('toolbox.kv')
+# импортируется и высвечивается файл на том же холсте, а в нем мы дорисовали ToolButton
+# а по чему он вызывается, потому что при вызове <ComicCreator>: вызывается ToolBox: класс а сам класс
+# вытягивается в toolbox.kv файл загружен, киви вынужден показать ToolBox: где мы указали разметку
+#   cols: 2 # два ряда padding: 2 # отступ от края, создали кнопку и далее используем ToolButton:
+#   которую наследовали от ToggleButton которая нажимается
+
+#  пространство для рисования
+
+    AnchorLayout:
+        anchor_x: 'right'
+        anchor_y: 'top'
+        DrawingSpace:
+            size_hint: None, None
+            width: root.width - _tool_box.width # оператор root помогает связывать id: _tool_box -(минус) id _tool_box.ширина
+            height: root.height - _general_options.height - _status_bar.height #от общего окна отняли id _status_bar.высота
+# root обращается ко всему окну мы использовали id указывали ширина это или высота мы так себе выкраивали пространство
+
+
+    AnchorLayout:
+        anchor_x: 'center'
+        anchor_y: 'bottom'
+        BoxLayout:
+            orientation: 'vertical'
+            GeneralOptions:
+                id: _general_options# при помощи id создадим реально
+                size_hint: 1, None # размер относительно холста и второго AnchorLayout , по х 1 значит кнопки на весь экран
+                height: 50
+
+            StatusBar:
+                id: _status_bar
+                size_hint: 1, None
+                height: 24

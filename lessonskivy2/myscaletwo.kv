@@ -1,0 +1,26 @@
+# -*- coding: utf-8 -*-
+#:kivy 1.11.0
+#myscaletwo.kv
+<MyScaleTwo@RelativeLayout>:
+
+    pos_hint: {"x": .85, "y": 1.4}
+    canvas:
+
+        Rotate:
+            angle: 270
+            axis: 0,0, 5
+        Translate:
+            y: -100
+        Scale:
+            xyz: (.8, .8, 0)
+        Color:
+            rgb: 1, 1, 1
+        Rectangle:
+            pos: .05, .05
+            size: 250, 130
+            source: 'icb/getImage.webp'
+
+    Label:
+        pos: 70, 100
+        markup: True
+        text: "[size=32px][color=#e6df15]Желаю всем[/color] [color=#15dbe6]участникам школы Kivy![/color] [/size]"

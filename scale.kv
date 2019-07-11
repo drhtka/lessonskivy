@@ -1,0 +1,31 @@
+# -*- coding: utf-8 -*-
+#:kivy 1.11.0
+
+<DrawingScale>:
+    pos_hint: {'x': .5, 'y': .5}
+    canvas:
+        Rectangle:
+            source: 'icb/getImage.webp'
+
+        Rotate:
+            angle: 90
+            axis: 0,0, 5
+        Color:
+            rgb: 1, 0, 0 #red
+        Rectangle:
+            source: 'icb/getImage.webp'
+        Translate:
+            x: -100
+        Color:
+            rgb: 0, 1, 0 #green
+        Rectangle:
+            source: 'icb/getImage.webp'
+
+        Translate:
+            y: -100
+        Scale:
+            xyz: (.8, .8, 0)
+        Color:
+            rgb: 0, 0, 1 #blue
+        Rectangle:
+            source: 'icb/getImage.webp'

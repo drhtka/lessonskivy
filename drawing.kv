@@ -1,0 +1,60 @@
+# -*- coding: utf-8 -*-
+#:kivy 1.11.0
+
+
+<DrawingSpace>:
+    canvas:
+        Rectangle:
+            pos: self.x+10, self.top-80
+            size: self.width*0.15, self.height*0.3
+
+        Ellipse:
+            angle_start: 120
+            angle_end: 420
+            pos: 110, 110
+            size: 80, 80
+
+        Ellipse:
+            segments: 3
+            pos: 210, 210
+            size: 60, 80
+
+# рисуем треугольник
+        Triangle:
+            points: 310, 110, 340, 190, 380, 130
+
+# рисуем квадрат
+        Quad:
+            points: 400, 100, 400, 200, 500, 200, 500, 100
+
+# рисуем линию urok_24
+        Line:
+            points: 10, 30, 90, 90, 10, 10, 60
+
+# рисуем точки
+        Point:
+            points: 110,30, 190,90, 190,10, 110,60
+            pointsize: 10
+
+# безье
+        Bezier:
+            points: 210,30, 290,90, 290,10, 110,60
+            segments: 360
+            dash_length: 10
+            dash_offset: 5
+
+#ячейки
+        Mesh:
+            mode: 'triangle_fan'
+            vertices: 310,30,0,0, 390,90,0,0, 390,10,0,0, 310,60,0,0
+            indices: 0,1,2,3
+
+        Mesh:
+            mode: 'triangle_fan'
+            vertices: 430,90,0,0, 470,90,0,0, 490,70,0,0, 450,10,0,0, 410,70,0,0, 430,90,0,0
+            indices: 0,1,2,3,4,5
+
+#        Mesh:
+#            mode: 'triangle_fan'
+#            vertices: 400,100,0,0, 700,40,0,0, 800,80,0,0
+#            indices: 0,1,2

@@ -1,0 +1,53 @@
+# -*- coding: utf-8 -*-
+#:kivy 1.11.0
+
+<MyAddingIcb>:
+    canvas:
+        #downd quard color green
+        Color:
+            rgba: 0, 1, 0, 1
+
+        Line:
+            points: 300, 0, 500, 0
+            width: 150
+            cap: 'square'
+        #up quard olor yellow
+        Color:
+            rgba: 8, 1, 0.3, 1
+
+        Line:
+            points: 300, 200, 500, 200
+            width: 50
+            cap: 'square'
+
+        #center quard color black
+        Color:
+            rgba: .5, .5, .5, 1
+
+        Quad:
+            points: 100,350, 700,350, 700,250, 100,250
+
+        Rectangle:
+            pos: 100, 250
+            size: 150, 100
+            source: 'icb/getImage.webp'
+
+        Rectangle:
+            pos: 550, 250
+            size: 150, 100
+            source: 'icb/getImage.webp'
+
+
+        Rectangle:
+            pos: 325, 250
+            size: 150, 100
+            source: 'icb/getImage.webp'
+        #os_ordinat
+        Quad:
+            points: 200,350, 600,350, 600,600, 200,600
+            source: 'icb/os_ord.JPG'
+
+        Ellipse:
+            pos: 25, 500
+            size: 80, 80
+            source: 'icb/kivy.jpg'

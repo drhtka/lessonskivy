@@ -1,0 +1,17 @@
+# -*- coding: utf-8 -*-
+#:kivy 1.11.0
+
+<MyButton@ToggleButton>:
+    size_hint: None, None
+    size: 48, 48
+    group: 'tool'
+
+<MyBox@GridLayout>:
+    cols: 2
+    padding: 2
+    MyButton:
+        text: '0'
+    MyButton:
+        text: '0'
+    MyButton:
+        text: '0'

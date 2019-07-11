@@ -1,0 +1,36 @@
+# -*- coding: utf-8 -*-
+#:kivy 1.11.0
+#добавление изображения, цвета и фоны
+
+<AddingIcb>:
+    canvas:
+        Ellipse:
+            pos: 10, 10
+            size: 80, 80
+            source: 'icb/getImage.webp'
+
+        Rectangle:
+            pos: 110, 110
+            size: 80, 80
+            source: 'icb/getImage.webp'
+
+        Color:
+            rgba: 8, 1, 0, 1
+
+        Line:
+            points: 10, 10, 390, 10
+            width: 10
+            # кепка: 'квадрат'
+            cap: 'square'
+
+        Color:
+            rgba: 0, 1, 0, 1
+
+        Rectangle:
+            pos: 210, 10
+            size: 80, 80
+            source: 'icb/getImage.webp'
+
+        Rectangle:
+            pos: 310, 10
+            size: 80, 80

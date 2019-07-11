@@ -1,0 +1,43 @@
+# -*- coding: utf-8 -*-
+
+# будем создавать экземпляр класса при помощм самого киви а не при помощи кода
+#  разница между ToggleButton и Button кнопка не будет нажатой
+<ToolButton@ToggleButton>: # при помощи фреймверка киви создали кнопку и новый класс
+# используя ToolButton придумали сами, наследование при помощи @ToggleButton
+    size_hint: None, None # в завимости от ширины всего экрана, поэту писали None нам
+#не нужно распологать в зависимости от ширины экрана(т.е 50% или 40)  мы зададим размер
+    size: 48, 48 #размер
+    group: 'tool'# сгруппировать кнопки
+
+    canvas:
+        PushMatrix:
+        Translate:
+            xy: self.x, self.y
+
+    canvas.after:
+        PopMatrix:
+
+<ToolBox@GridLayout>: # расположение кнопок ToolBox@GridLayout опять наследуем из класса GridLayout разметка
+    cols: 2 # два ряда
+    padding: 2 # отступ от края
+# теперь создаем сами кнопки
+    #button_first
+    ToolButton: # используем класс который мы создали выше и наследовали от ToggleButton
+        #было до
+        #text: '0' # первая кнопка и текст который будет содержаться
+        canvas:
+            Line:
+                circle: 24, 24, 14
+    #button_second
+    ToolButton:
+        #было до
+        #text: '/'
+        canvas:
+            Line:
+                points: 10,10, 38,38
+    #button_third
+    ToolButton:
+        #было до
+        #text: '?'
+        StickMan:
+            pos_hint: {'center_x': .5, 'center_y': .5}

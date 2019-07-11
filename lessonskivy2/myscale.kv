@@ -1,0 +1,37 @@
+# -*- coding: utf-8 -*-
+#:kivy 1.11.0
+#myscale.py
+
+<MyDrawScale>:
+
+    pos_hint: {'x': .85, 'y': .2}
+    canvas:
+        Rectangle:
+            source: 'icb/kivy.jpg'
+
+        Rotate:
+            angle: 90
+            axis: 0,0, 5
+        Color:
+            rgb: 1, 0, 0 #red
+        Rectangle:
+            source: 'icb/kivy.jpg'
+        Translate:
+            x: -100
+        Color:
+            rgb: 0, 1, 0 #green
+        Rectangle:
+            source: 'icb/kivy.jpg'
+
+        Translate:
+            y: -100
+        Scale:
+            xyz: (.8, .8, 0)
+        Color:
+            rgb: 0, 0, 1 #blue
+        Rectangle:
+            source: 'icb/kivy.jpg'
+
+    MyScaleTwo:
+        id: _my_scale
+        size_hint: None, None

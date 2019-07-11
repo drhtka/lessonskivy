@@ -1,0 +1,51 @@
+# -*- coding: utf-8 -*-
+#:kivy 1.11.0
+#mysgi.py
+
+<MyGrapInst>:
+    #color before
+    canvas.before:
+        Color:
+            rgb: .3, .4, .9
+        Rectangle:
+            pos: 150, 300
+            size: 100, 100
+
+    #color center
+    canvas:
+        Color:
+            rgb: .6, .5, .9
+        Rectangle:
+            pos: 350, 300
+            size: 100, 100
+    #color after
+    canvas.after:
+        Color:
+            rgb: .9, .7, 1
+        Rectangle:
+            pos: 550, 300
+            size: 100, 100
+    #long button
+    Button:
+        markup: True
+        text: '[size=40px][color=#40de1d]very long button[/color] спасибо школе [/size]'
+        pos_hint: {'center_x': .5, 'center_y': .2}
+        size_hint: .9, .2
+
+    Label:
+
+        markup: True
+        pos_hint: {'center_x': .5, 'center_y': .8}
+        text: "[size=44px][color=#c331f7]School[/color] [color=#18baa2]Kivy![/color] [/size]"
+
+    Label:
+
+        markup: True
+        pos_hint: {'center_x': .5, 'center_y': .4}
+        text: "[size=44px][color=#c331f7]very[/color] [color=#18baa2]Nice![/color] [/size]"
+
+    Label:
+
+        markup: True
+        pos_hint: {'center_x': .03, 'center_y': .02}
+        text: "[size=10px][color=#405c3a]D_NaG[/color][/size]"

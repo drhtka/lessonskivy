@@ -1,0 +1,22 @@
+# -*- coding: utf-8 -*-
+#:kivy 1.11.0
+
+# пишем сами кнопки
+
+<GeneralOptions@BoxLayout>:
+    orientation: 'horizontal'
+    padding: 2 # от нижнего края до кнопок увеличитвается расстояние
+
+    Button:
+        text: 'Clear'
+    Button:
+        text: 'Remove'
+
+    ToggleButton:
+        text: 'group'
+
+    Button:
+        text: 'Color'
+
+    ToggleButton:
+        text: 'Guestusers'
