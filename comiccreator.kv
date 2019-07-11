@@ -6,7 +6,11 @@
         anchor_x: 'left' # с лева
         anchor_y: 'top' # в низу
         ToolBox: # создаем класс и файл делаем по названию класса, тогда киви будет его понимать
+            #создание id and attributes
             id: _tool_box # будем писать файл ToolBox чтоб взаимосвязать переменные придуман id
+            drawing_space: _drawing_space# чтобы в классе ToolBox: был доступен клас _drawing_space
+            comic_creator: root
+            # End создание id and attributes
             # пишется с одним нижним подчеркиванием назвали от балды _tool_box
 # суть языка кивии отображать внутренние переменные которые дают доступ к эллементам внутри языка
 # синтаксис одно нижнее подчеркивание впереди
@@ -27,6 +31,12 @@
         anchor_x: 'right'
         anchor_y: 'top'
         DrawingSpace:
+            #создание id and attributes
+            id: _drawing_space
+            tool_box: _tool_box
+            general_options: _general_options
+            status_bar: _status_bar
+            # End создание id and attributes
             size_hint: None, None
             width: root.width - _tool_box.width # оператор root помогает связывать id: _tool_box -(минус) id _tool_box.ширина
             height: root.height - _general_options.height - _status_bar.height #от общего окна отняли id _status_bar.высота
@@ -39,11 +49,17 @@
         BoxLayout:
             orientation: 'vertical'
             GeneralOptions:
-                id: _general_options# при помощи id создадим реально
-                size_hint: 1, None # размер относительно холста и второго AnchorLayout , по х 1 значит кнопки на весь экран
+            #создание id and attributes
+            #End создание id and attributes
+                id: _general_options#как обращаться, переменнаяя к GeneralOptions
+                drawing_space: _drawing_space
+                comic_creator: root
+                size_hint: 1, None #размер относительно холста и второго AnchorLayout , по х 1 значит кнопки на весь экран
                 height: 50
 
             StatusBar:
+                #создание id and attributes
                 id: _status_bar
+                # End создание id and attributes
                 size_hint: 1, None
                 height: 24
