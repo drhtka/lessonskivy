@@ -7,7 +7,7 @@ Builder.load_file('toolbox.kv')
 Builder.load_file('generaloptions.kv')
 Builder.load_file('statusbar.kv')
 Builder.load_file('drawingspace.kv')
-Builder.load_file('comicwidgets.kv')
+Builder.load_file('comicwidgets1.kv')
 
 class ComicCreator(AnchorLayout): # создали клас ComicCreator наследовали от класса AnchorLayout(макет якорь)
     pass # здесь кода нет он в классе AnchorLayout

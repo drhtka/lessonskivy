@@ -3,23 +3,25 @@
 #comicreator.py
 <DrawingSpace@RelativeLayout>:# относительный макет
     #было до рисования урок 30
-    Label:
-        pos_hint: {'center_x': .5, 'center_y': .8}#расположение в центре
-        markup: True
-        text: "[size=32px][color=#1638B9]Привет[/color] [color=#F4A9BA]участникам школы Kivy![/color] [/size]"
-    StickMan:
-        pos_hint: {'center_x': .5, 'center_y': .5}#расположение в центре
-        canvas.before:
-            Translate:#вращение
-                xy: -self.width/2, -self.height/2#разделить на два
-            Scale:#масштаб
-                xyz: 2, 2, 0
-    StickCar:
-        pos_hint: {'center_x': .2, 'center_y': .5}#расположение c лева
-        canvas.before:
-            Translate:#вращение
-                xy: -self.width/2, -self.height/2#разделить на два
-            Scale:#масштаб
-                xyz: 2, 2, 0
-
+    #Label:
+    #    pos_hint: {'center_x': .5, 'center_y': .8}#расположение в центре
+    #    markup: True
+    #    text: "[size=32px][color=#1638B9]Привет[/color] [color=#F4A9BA]участникам школы Kivy![/color] [/size]"
+    #StickMan:
+    #    pos_hint: {'center_x': .5, 'center_y': .5}#расположение в центре
+    #    canvas.before:
+    #        Translate:#вращение
+    #            xy: -self.width/2, -self.height/2#разделить на два
+    #        Scale:#масштаб
+    #            xyz: 2, 2, 0
+    #StickCar:
+    #    pos_hint: {'center_x': .2, 'center_y': .5}#расположение c лева
+    #    canvas.before:
+    #        Translate:#вращение
+    #            xy: -self.width/2, -self.height/2#разделить на два
+    #        Scale:#масштаб
+    #            xyz: 2, 2, 0
+    canvas.before:
+        Line:
+            rectangle: 0, 0, self.width -4, self.height -4
     StickMan:
