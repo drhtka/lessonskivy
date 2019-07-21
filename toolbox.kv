@@ -26,6 +26,8 @@
         #было до
         #text: '0' # первая кнопка и текст который будет содержаться
         canvas:
+            Color:
+                rgb: 0, 1, 0, #green
             Line:
                 circle: 24, 24, 14
     #button_second
@@ -33,11 +35,16 @@
         #было до
         #text: '/'
         canvas:
+            Color:
+                rgb: 0, 0, 1, #red
             Line:
                 points: 10,10, 38,38
     #button_third
     ToolButton:
         #было до
         #text: '?'
+        canvas:
+            Color:
+                rgb: 1, 0, 0, # blue
         StickMan:
             pos_hint: {'center_x': .5, 'center_y': .5}

@@ -3,11 +3,13 @@
 
 from kivy.properties import ListProperty, NumericProperty
 from kivy.uix.relativelayout import RelativeLayout
-from kivy.graphics import Line
-from kivy.graphics import *
+from kivy.graphics import Line, Color
+#from kivy.graphics import *
+#from kivy.graphics import Color
+#from random import random as r
 
 class DraggableWidget(RelativeLayout):
-    pencolor = ListProperty([1, 0, 0, 1])# Red
+    #pencolor = ListProperty([1, 0, 0, 1])# Red
 
     def __init__(self, **kwargs):
         self.selected = None
@@ -16,17 +18,19 @@ class DraggableWidget(RelativeLayout):
     def  on_touch_down(self, touch):
         if self.collide_point(touch.x, touch.y):
             self.select()
+            #self.select_color()
             return True
         return super(DraggableWidget, self).on_touch_down(touch)
 
     def select(self,):
         if not self.selected:
+            self.selected = Color(1, 0, 0)
             self.ix = self.center_x
             self.iy = self.center_y
             with self.canvas:
-                Color(rgba=self.pencolor)
-                self.selected = Line(rictangle=
-                    (0,0,self.width,self.height), dash_offset=2)
+                self.selected = Color(1, 1, 1)
+                self.selected = Line(ellipse=
+                    (-150, -150, 350, 350), dash_offset=0)
 
 
     def on_touch_move(self, touch):
@@ -55,7 +59,12 @@ class DraggableWidget(RelativeLayout):
             self.canvas.remove(self.selected)
             self.selected = None
 
+    #def select_color(self,):
+     #   if not self.selected:
+      #      with self.canvas:
+       #         Color(1, 1, 1)
+        #        d = 30.0
+         #   return True
 
 class StickMan(DraggableWidget):
     pass
-

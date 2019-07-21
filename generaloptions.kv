@@ -4,19 +4,27 @@
 # пишем сами кнопки
 
 <GeneralOptions@BoxLayout>:
+
     orientation: 'horizontal'
     padding: 2 # от нижнего края до кнопок увеличитвается расстояние
-
+    canvas.before:
+        Color:
+            rgb: 1, 0, 0
     Button:
         text: 'Clear'
+        background_color: 1,0,0,1
     Button:
+        color: 1,0,0,1
         text: 'Remove'
 
     ToggleButton:
         text: 'group'
-
+        background_color: 0,1,0,1
     Button:
+        color: 0,1,0,1
         text: 'Color'
 
     ToggleButton:
+        color: 0,0,1,1
         text: 'Guestusers'
+
