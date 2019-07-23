@@ -24,13 +24,12 @@ class DraggableWidget(RelativeLayout):
 
     def select(self,):
         if not self.selected:
-            self.selected = Color(1, 0, 0)
             self.ix = self.center_x
             self.iy = self.center_y
             with self.canvas:
                 self.selected = Color(1, 1, 1)
-                self.selected = Line(ellipse=
-                    (-150, -150, 350, 350), dash_offset=0)
+                self.selected = Line(restangle=
+                    (0,0,self.width,self.height), dash_offset=2)
 
 
     def on_touch_move(self, touch):
