@@ -3,11 +3,11 @@ from kivy.app import App
 from kivy.lang import Builder
 from kivy.uix.anchorlayout import AnchorLayout
 
-Builder.load_file('toolbox.kv')
-Builder.load_file('generaloptions.kv')
-Builder.load_file('statusbar.kv')
-Builder.load_file('drawingspace.kv')
-Builder.load_file('comicwidgets1.kv')
+Builder.load_file('toolbox.kv')#sticman button up left
+Builder.load_file('generaloptions.kv')# five button
+Builder.load_file('statusbar.kv')#inscription below
+Builder.load_file('drawingspace.kv')# надпись привет участникам
+Builder.load_file('comicwidgets1.kv')#StickMan
 
 class ComicCreator(AnchorLayout): # создали клас ComicCreator наследовали от класса AnchorLayout(макет якорь)
     pass # здесь кода нет он в классе AnchorLayout

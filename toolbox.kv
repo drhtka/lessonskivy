@@ -1,9 +1,11 @@
 # -*- coding: utf-8 -*-
-
+#kivy 1.11.0
+#:import toolbox:toolbox
 # будем создавать экземпляр класса при помощм самого киви а не при помощи кода
 #  разница между ToggleButton и Button кнопка не будет нажатой
-<ToolButton@ToggleButton>: # при помощи фреймверка киви создали кнопку и новый класс
+#<ToolButton@ToggleButton>: # при помощи фреймверка киви создали кнопку и новый класс
 # используя ToolButton придумали сами, наследование при помощи @ToggleButton
+<ToolButton>: # новый класс ToolButton придумали сами
     size_hint: None, None # в завимости от ширины всего экрана, поэту писали None нам
 #не нужно распологать в зависимости от ширины экрана(т.е 50% или 40)  мы зададим размер
     size: 48, 48 #размер
@@ -36,7 +38,7 @@
         #text: '/'
         canvas:
             Color:
-                rgb: 0, 0, 1, #red
+                rgb: 0, 0, 1, #blue
             Line:
                 points: 10,10, 38,38
     #button_third
@@ -45,6 +47,6 @@
         #text: '?'
         canvas:
             Color:
-                rgb: 1, 0, 0, # blue
+                rgb: 1, 0, 0, #red
         StickMan:
             pos_hint: {'center_x': .5, 'center_y': .5}
