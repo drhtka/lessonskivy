@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
-
+# File name: toolbox.py
+import kivy
 import math
 from kivy.uix.togglebutton import ToggleButton
 from kivy.graphics import Line
@@ -13,8 +14,16 @@ class ToolButton(ToggleButton):
             self.draw(ds, x, y)
             return True
         return super(ToolButton, self).on_touch_down(touch)
+
     def draw(self, ds, x, y):
         pass
+
+class ToolStickman(ToolButton):
+        def draw(self, ds, x, y):
+            sm = StickMan(width=48, height=48)
+            sm.center = (x, y)
+            ds.add_widget(sm)
+
 """
 
 class ToolButton(ToggleButton):#создаем наследуемый класс который все знает про кнопки
@@ -34,4 +43,4 @@ class ToolButton(ToggleButton):#создаем наследуемый класс
     def draw(self, ds, x, y):# рисуем (в созданном пространстве, в определеных автоматом при косании на координатах)
         pass#говорим классу ничего не делать
 
-"""# описание класса ToolButton
+"""# описание класса ToolButton для ДЗ

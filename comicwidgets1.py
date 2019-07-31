@@ -9,8 +9,6 @@ from kivy.graphics import Line, Color
 #from random import random as r
 
 class DraggableWidget(RelativeLayout):
-    #pencolor = ListProperty([1, 0, 0, 1])# Red
-
     def __init__(self, **kwargs):
         self.selected = None
         super(DraggableWidget, self).__init__(**kwargs)
@@ -27,31 +25,27 @@ class DraggableWidget(RelativeLayout):
             self.ix = self.center_x
             self.iy = self.center_y
             with self.canvas:
-                self.selected = Color(1, 1, 1)
-                self.selected = Line(restangle=
-                    (0,0,self.width,self.height), dash_offset=2)
-
+                #Color(rgb=(1, 0, 0))
+                #self.selected = Color(1, 1, 1)
+                self.selected = Line(restangle=(0,0,self.width,self.height), dash_offset=2)
 
     def on_touch_move(self, touch):
         (x,y) = self.parent.to_parent(touch.x, touch.y)
         if self.selected and self.parent.collide_point(x - self.width/2, y - self.height/2):
-
-
-            self.translate(touch.x-self.ix, touch.y-self.iy)
-            return  True
-        return  super(DraggableWidget, self).on_touch_move(touch)
-
+            go = self.parent.general_options
+            go.translation=(touch.x-self.ix,touch.y-self.iy)
+            return True
+        return super(DraggableWidget, self).on_touch_move(touch)
 
     def translate(self, x, y):
         self.center_x = self.ix + x
         self.center_y = self.iy = self.iy + y
 
-
     def on_touch_up(self, touch):
         if self.selected:
             self.unselect()
-            return  True
-        return  super(DraggableWidget, self).on_touch_up(touch)
+            return True
+        return super(DraggableWidget, self).on_touch_up(touch)
 
     def unselect(self):
         if self.selected:
