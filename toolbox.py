@@ -19,10 +19,10 @@ class ToolButton(ToggleButton):
         pass
 
 class ToolStickman(ToolButton):
-        def draw(self, ds, x, y):
-            sm = StickMan(width=48, height=48)
-            sm.center = (x, y)
-            ds.add_widget(sm)
+    def draw(self, ds, x, y):
+        sm = StickMan(width=48, height=48)
+        sm.center = (x, y)
+        ds.add_widget(sm)
 
 """
 
@@ -44,3 +44,23 @@ class ToolButton(ToggleButton):#создаем наследуемый класс
         pass#говорим классу ничего не делать
 
 """# описание класса ToolButton для ДЗ
+
+class ToolFigure(ToolButton):
+    def draw(self, ds, x, y):
+        (self.ix, self.iy)=(x,y)
+        with ds.canvas:
+            self.figure=self.create_figure(x, y, x+1, y+1)
+        ds.bind(on_touch_move=self.update_figure)
+        ds.bind(on_touch_move=self.end_figure)
+
+    def update_figure(self):
+
+    def end_figure(self):
+
+    def widgetize(self):
+
+    def _create_figure(self, ix, iy, fx, fy):
+        pass
+
+    def create_widget(self, ix, iy, fx, fy):
+        pass
