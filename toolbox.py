@@ -69,6 +69,11 @@ class ToolFigure(ToolButton):
         self.widgetize(ds, self.ix, self.iy, fx, fy)
 
     def widgetize(self, ds, ix, iy, fx, fy):
+        widget = self.create_widget(ix, iy, fx, fy)
+        (ix, iy) = widget.to_local(ix, iy, relative=True)
+        (fx, fy) = widget.to_local(fx, fy, relative=True)
+        widget.canvas.add(self._create_figure(ix, iy, fx, fy))
+        ds.add_widget(widget)
 
 
     def _create_figure(self, ix, iy, fx, fy):
