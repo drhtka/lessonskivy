@@ -61,9 +61,15 @@ class ToolFigure(ToolButton):
                 self.figure = self._create_figure(self.iy, self.iy, x, y)
 
 
-    def end_figure(self):
+    def end_figure(self, ds, touch):
+        ds.unbind(on_touch_move=self.update_figure)
+        ds.unbind(on_touch_up=self.end_figure)
+        ds.canvas.remove(self.figure)
+        (fx, fy) = ds.to_widget(touch.x, touch.y)
+        self.widgetize(ds, self.ix, self.iy, fx, fy)
 
-    def widgetize(self):
+    def widgetize(self, ds, ix, iy, fx, fy):
+
 
     def _create_figure(self, ix, iy, fx, fy):
         pass
