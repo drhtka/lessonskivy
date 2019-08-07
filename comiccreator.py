@@ -14,7 +14,7 @@ class ComicCreator(AnchorLayout): # создали клас ComicCreator нас�
 
 class ComicCreatorApp(App): # в данном классе говорится запустить класс
     def build(self):
-        return ComicCreator() # запустить класс ComicCreator который запускает файл comiccreator.kv
+        return ComicCreator()# запустить класс ComicCreator который запускает файл comiccreator.kv
 
 if __name__ == '__main__':
     ComicCreatorApp().run()
