@@ -24,6 +24,7 @@
     padding: 2 # отступ от края
     tool_stickman: _tool_stickman
     tool_line: _tool_line
+    tool_circle: _tool_circle
 
     ToolStickman:
         id: _tool_stickman
@@ -34,4 +35,10 @@
         id: _tool_line
         canvas:
             Line:
-                points: 10, 10, 38, 38
+                points: 10, 10, 28, 28
+
+    ToolCircle:
+        id: _tool_circle
+        canvas:
+            Line:
+                points: 24, 24, 14

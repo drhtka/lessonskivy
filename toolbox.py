@@ -136,8 +136,10 @@ class ToolLine(ToolFigure):
         return DraggableWidget(pos = pos, size=size)
 
 class ToolCircle(ToolFigure):
+
     def create_figure(self, ix, iy, fx, fy):
-        return Line(circle=[ix, iy, math.hypot(ix-fx,iy-fy)])
+        return Line(circle=[ix, iy, math.hypot(ix-fx, iy-fy)])
+
     def create_widget(self, ix, iy, fx, fy):
         r = math.hypot(ix-fx, iy-fy)
         pos = (ix-r, iy-r)

@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 #:kivy 1.11.0
-
+#:import generaloptionsb generaloptions
+#теперь киви знает что обрабатывается при помощи generaloptions.py
 # пишем сами кнопки
 
 <GeneralOptions@BoxLayout>:
@@ -13,18 +14,24 @@
     Button:
         text: 'Clear'
         background_color: 1,0,0,1
+        on_press: root.clear(*args)
     Button:
         color: 1,0,0,1
         text: 'Remove'
+        on_release: root.remove(*args)
 
     ToggleButton:
         text: 'group'
         background_color: 0,1,0,1
+        on_state: root.group(*args)
+
     Button:
         color: 0,1,0,1
         text: 'Color'
+        on_press: root.color(*args)
 
     ToggleButton:
         color: 0,0,1,1
         text: 'Guestusers'
+        on_state: root.gestures(*args)
 
